@@ -1,0 +1,12 @@
+.tools {
+  border: 3px solid red;
+  margin: 30px;
+  height: 50px;
+}
+.textArea {
+  border: 4px solid;
+  /* width: 150vh; */
+  height: 500px;
+  margin: 30px;
+  padding: 10px;
+}
