@@ -2,11 +2,16 @@ body {
   border: #ea2020;
   padding: 20px;
   margin: 2px;
-  background-color: #f8877f;
+
+  background: linear-gradient(
+    128deg,
+    rgba(9, 9, 121, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
   box-sizing: border-box;
 }
 .container {
-  background-color: #ffffff;
+  background: #ffffff;
   width: 100vmin;
   padding: 50px 30px;
   position: absolute;

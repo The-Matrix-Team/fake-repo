@@ -5,6 +5,8 @@ let optionsButtons = document.querySelectorAll(".option-button");
 let advancedOptionButton = document.querySelectorAll(".adv-option-button");
 let writingArea = document.getElementById("textArea");
 let removeButton = document.getElementById("clearAll");
+let saveButton = document.getElementById("saveNote");
+let backButton = document.getElementById("backButton");
 
 // add default add
 let fontList = ["Arial", "Times New Roman", "Courier New", "cursive"];
