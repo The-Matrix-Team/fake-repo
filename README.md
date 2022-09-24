@@ -14,6 +14,9 @@ To Do:
 5. Live the project
 6. Documentation
 
+Error:
+Font Family not working properly
+
 Features:
 
 1. User can make a note
