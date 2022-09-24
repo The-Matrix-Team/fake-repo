@@ -26,3 +26,6 @@ Features:
 3. User can copy all text by click of a button
 4. User can see the list of notes made by user
 5. User can create a new note and can switch between notes
+
+Images till now:
+![editor](./img/editor.png)
