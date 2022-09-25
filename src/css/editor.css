@@ -1,7 +1,9 @@
 body {
   border: #ea2020;
-  padding: 20px;
-  margin: 2px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background: linear-gradient(
     128deg,
@@ -14,10 +16,6 @@ body {
   background: #ffffff;
   width: 100vmin;
   padding: 50px 30px;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
   border-radius: 10px;
   box-shadow: 0 25px 50px rgba(7, 20, 35, 0.2);
 }
@@ -29,8 +27,17 @@ body {
   gap: 15px;
 }
 button {
-  padding: 5px;
+  padding: 7px;
   margin: 5px 4px;
+  border: none;
+  background-color: rgb(224, 255, 244);
+  border-radius: 6px;
+}
+select {
+  border: 1px solid rgb(45, 255, 181);
+  background-color: rgb(224, 255, 244);
+  border-radius: 6px;
+  padding: 7px;
 }
 #textArea {
   margin-top: 10px;
@@ -41,4 +48,13 @@ button {
 
 .active {
   background-color: #b3f235;
+}
+@media (max-width: 500px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  .container {
+    transform: translate(0, 0);
+  }
 }

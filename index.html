@@ -4,48 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Team A</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="./src/css/main.css" />
-    <!-- CSS only -->
+    <title>Notepade list</title>
+    <link rel="stylesheet" href="src/css/main.css" />
   </head>
+
   <body>
-    <div class="app">
-     
-      
-      <div class="notes" >
-        <div class="wrapper">
-          <li class="add-box" onclick="window.location.href='/src/editor.html'" >
-            <div class="icon">+</div>
-            <p>Add new note</p>
-          </li>
+    <div id="root">
+      <nav id="nav">
+        <!-- <li class="img"></li> -->
+        <div class="title">
+          <img class="img" src="src/img/create-note-alt.svg" alt="notepad" />
+          Notepad
         </div>
-      <div class="allNotes">
-
-       
-
-        <div class="tools">
-          <div class="edit"></div>
-          <div class="delete"></div>
+        <div class="searchfield">
+          <input type="text" placeholder="Search" />
+          <button>
+            <img class="sch" src="src/img/search-alt-3.svg" alt="" />
+          </button>
         </div>
-        <div class="note-title"></div>
-        <div class="note-boby"></div>
-        <div class="note-time"></div>
+      </nav>
+      <div class="main-div">
+        <button
+          class="note1 note-div"
+          onclick="window.location.href='src/editor.html';"
+          target="_blank"
+          value="click"
+        >
+          <svg
+            class="plus"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            class="icon line"
+            width="48"
+            height="48"
+          >
+            <path
+              id="primary"
+              d="M5,12H19M12,5V19"
+              style="
+                fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 2px;
+              "
+            ></path>
+          </svg>
+        </button>
 
-   
+        <div class="note-div"></div>
+        <div class="note-div"></div>
+        <div class="note-div"></div>
       </div>
-
-
-</div>
-
-    <script
-      src="https://kit.fontawesome.com/bf520e6492.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./src/js/index.js" type="module"></script>
-    <!-- JavaScript Bundle with Popper -->
+    </div>
   </body>
 </html>

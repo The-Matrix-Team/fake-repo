@@ -1,112 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>editor</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../src/css/editor.css" />
-    <!-- CSS only -->
-  </head>
-  <body>
-    <div class="container">
-        <div class="tools">
-       
-          <!-- Font -->
-          <select id="fontName" class="adv-option-button">
-          </select>
 
-          <select id="fontSize" class="adv-option-button">
-          
-          </select>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notepad</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet" href="./css/editor.css" />
+  <!-- CSS only -->
+</head>
 
-          
-          <!-- Text Format -->
-          <button id="bold" class="option-button format  highLight" >
-            <i class="fa-solid fa-bold"></i>
-          </button>
-          <button id="italic" class="option-button format highLight">
-            <i class="fa-solid fa-italic"></i>
-          </button>
-          <button id="underline" class="option-button format highLight">
-            <i class="fa-solid fa-underline"></i>
-          </button>
-
-          <button id="superscript" class="option-button script highLight">
-            <i class="fa-solid fa-superscript"></i>
-          </button>
-          <button id="subscript" class="option-button script highLight">
-            <i class="fa-solid fa-subscript"></i>
-          </button>
-
-          
-          <!-- List -->
-          <button id="insertOrderedList" class="option-button">
-            <div class="fa-solid fa-list-ol"></div>
-          </button>
-          <button id="insertUnorderedList" class="option-button">
-            <i class="fa-solid fa-list"></i>
-          </button>
-          <!-- Undo/Redo -->
-          <button id="undo" class="option-button">
-            <i class="fa-solid fa-rotate-left"></i>
-          </button>
-          <button id="redo" class="option-button">
-            <i class="fa-solid fa-rotate-right"></i>
-          </button>
-
-       
-
-          <!-- Alignment -->
-          <button id="justifyLeft" class="option-button align highLight">
-            <i class="fa-solid fa-align-left"></i>
-          </button>
-          <button id="justifyCenter" class="option-button align highLight">
-            <i class="fa-solid fa-align-center"></i>
-          </button>
-          <button id="justifyRight" class="option-button align highLight">
-            <i class="fa-solid fa-align-right"></i>
-          </button>
-          <button id="justifyFull" class="option-button align highLight">
-            <i class="fa-solid fa-align-justify"></i>
-          </button>
-
-          </button>
-        
-      </div>
-
-      <div>
-        <input type="text" id="Title" placeholder="Enter Title Here" required value="">
-        <div id="textArea" contenteditable="true"></div>
-        
-        
-        <div class="tools">
-          <button id="clearAll" class="clear" type="reset" >
-            Clear All
-          </button>
+<body>
+  <div class="container">
+    <div class="tools">
 
 
-          <button id="saveNote" > 
-            Save 
-          </button>
+      <!-- Font -->
+      <!-- Font Name not working for Now -->
+      <!-- <select id="fontName" class="adv-option-button">
+      </select> -->
 
-          <button id="backButton" onclick="history.back()">
-            Back
-          </button>
-          
-      </div>
+      <select id="fontSize" class="adv-option-button">
 
- </div> 
+      </select>
 
-      
 
-  
+      <!-- Text Format -->
+      <button id="bold" class="option-button format  highLight">
+        <i class="fa-solid fa-bold"></i>
+      </button>
+      <button id="italic" class="option-button format highLight">
+        <i class="fa-solid fa-italic"></i>
+      </button>
+      <button id="underline" class="option-button format highLight">
+        <i class="fa-solid fa-underline"></i>
+      </button>
 
-    <script src="./js/editor.js" type="module"></script>
+      <button id="superscript" class="option-button script highLight">
+        <i class="fa-solid fa-superscript"></i>
+      </button>
+      <button id="subscript" class="option-button script highLight">
+        <i class="fa-solid fa-subscript"></i>
+      </button>
+
+
+      <!-- List -->
+      <button id="insertOrderedList" class="option-button">
+        <div class="fa-solid fa-list-ol"></div>
+      </button>
+      <button id="insertUnorderedList" class="option-button">
+        <i class="fa-solid fa-list"></i>
+      </button>
+      <!-- Undo/Redo -->
+      <button id="undo" class="option-button">
+        <i class="fa-solid fa-rotate-left"></i>
+      </button>
+      <button id="redo" class="option-button">
+        <i class="fa-solid fa-rotate-right"></i>
+      </button>
+
+
+
+      <!-- Alignment -->
+      <button id="justifyLeft" class="option-button align highLight">
+        <i class="fa-solid fa-align-left"></i>
+      </button>
+      <button id="justifyCenter" class="option-button align highLight">
+        <i class="fa-solid fa-align-center"></i>
+      </button>
+      <button id="justifyRight" class="option-button align highLight">
+        <i class="fa-solid fa-align-right"></i>
+      </button>
+      <button id="justifyFull" class="option-button align highLight">
+        <i class="fa-solid fa-align-justify"></i>
+      </button>
+
+      </button>
+
+    </div>
+    <input type="text" id="Title" placeholder="Enter Title Here" >
     
-  </body>
+    <div id="textArea" contenteditable="true" >
+
+    </div>
+    <div class="tools">
+      <button id="clearAll" class="clear" onclick="clearAll()">
+        Clear All
+      </button>
+      <button id="saveNote">
+        Save
+      </button>
+      <button id="copyButton" >
+        Copy
+      </button>
+      
+      <button id="backButton" onclick="history.back()">
+        Back
+      </button>
+    </div>
+
+
+
+  </div>
+
+  <script src="./js/editor.js" type="module"></script>
+  <!-- JavaScript Bundle with Popper -->
+</body>
+
 </html>

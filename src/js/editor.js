@@ -1,6 +1,4 @@
-// import { arr } from "./index";
 import allNotesAPI from "./allNotesAPI.js";
-// import { arr } from "./index.js";
 
 let highLights = document.querySelectorAll(".highLight");
 let fontName = document.getElementById("fontName");
@@ -12,19 +10,20 @@ let titleArea = document.getElementById("Title");
 let removeButton = document.getElementById("clearAll");
 let saveButton = document.getElementById("saveNote");
 let backButton = document.getElementById("backButton");
+let copyButton = document.getElementById("copyButton");
 
-let meraArray = [];
 let id = createRandomId();
 
 // add default add
 let fontList = ["Arial", "Times New Roman", "Courier New", "cursive"];
+
 const init = () => {
-  fontList.map((value) => {
-    let option = document.createElement("option");
-    option.value = value;
-    option.innerHTML = value;
-    fontName.appendChild(option);
-  });
+  // fontList.map((value) => {
+  //   let option = document.createElement("option");
+  //   option.value = value;
+  //   option.innerHTML = value;
+  //   fontName.appendChild(option);
+  // });
 
   for (let i = 1; i <= 7; i++) {
     let option = document.createElement("option");
@@ -36,20 +35,16 @@ const init = () => {
   fontSizeRef.value = 4;
 };
 
-// Highlight button when clicked
-highLights.forEach((button) => {
-  button.addEventListener("click", () => {
-    console.log("here");
-    button.classList.toggle("active");
-  });
-});
-
 const modifyText = (command, defaultUi, value) => {
   document.execCommand(command, defaultUi, value);
 };
 
 optionsButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    if (button.id !== "undo" || button.id !== "redo") {
+      console.log("Not undo or redo");
+      button.classList.toggle("active");
+    }
     modifyText(button.id, false, null);
   });
 });
@@ -64,6 +59,7 @@ removeButton.addEventListener("click", () => {
   var msg = confirm("Do you really want to clear all?");
   if (msg == true) {
     writingArea.innerHTML = "";
+    titleArea.value = "";
   }
 });
 
@@ -82,8 +78,10 @@ function createRandomId() {
 }
 
 saveButton.addEventListener("click", () => {
+  let title = titleArea.value;
   let content = writingArea.innerHTML;
-  let title = titleArea.innerText;
+  console.log(content);
+  console.log(titleArea.value);
 
   if (content !== "" && title !== "") {
     let note = {
@@ -99,4 +97,17 @@ saveButton.addEventListener("click", () => {
   }
 });
 
+copyButton.addEventListener("click", () => {
+  let input = writingArea.innerText;
+  navigator.clipboard.writeText(input);
+  alert("Copied the text: " + input);
+});
+// copyButton.addEventListener("click", () => {
+//   var range = document.createRange();
+//   range.selectNode(document.getElementById("a"));
+//   window.getSelection().removeAllRanges(); // clear current selection
+//   window.getSelection().addRange(range); // to select text
+//   document.execCommand("copy");
+//   window.getSelection().removeAllRanges(); // to deselect
+// });
 window.onload = init();
