@@ -9,14 +9,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="editor.css" />
+    <link rel="stylesheet" href="../src/css/editor.css" />
     <!-- CSS only -->
   </head>
   <body>
     <div class="container">
-      <div class="tools">
+        <div class="tools">
        
-
           <!-- Font -->
           <select id="fontName" class="adv-option-button">
           </select>
@@ -79,26 +78,35 @@
           </button>
         
       </div>
-      <div id="textArea" contenteditable="true">
 
+      <div>
+        <input type="text" id="Title" placeholder="Enter Title Here" required value="">
+        <div id="textArea" contenteditable="true"></div>
+        
+        
+        <div class="tools">
+          <button id="clearAll" class="clear" type="reset" >
+            Clear All
+          </button>
+
+
+          <button id="saveNote" > 
+            Save 
+          </button>
+
+          <button id="backButton" onclick="history.back()">
+            Back
+          </button>
+          
       </div>
-    <div class="tools">
-      <button id="clearAll" class="clear" onclick="clearAll()">
-        Clear All
-      </button>
-      <button id="saveNote"> 
-        Save 
-      </button>
-      <button id="backButton">
-        Back
-      </button>
-    </div>
+
+ </div> 
 
       
 
-    </div>
+  
 
-    <script src="editor.js"></script>
-    <!-- JavaScript Bundle with Popper -->
+    <script src="./js/editor.js" type="module"></script>
+    
   </body>
 </html>

@@ -28,4 +28,4 @@ Features:
 5. User can create a new note and can switch between notes
 
 Images till now:
-![editor](./img/editor.png)
+![editor](./src/img/editor.png)

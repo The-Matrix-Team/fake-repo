@@ -1,12 +1,20 @@
+// import { arr } from "./index";
+import allNotesAPI from "./allNotesAPI.js";
+// import { arr } from "./index.js";
+
 let highLights = document.querySelectorAll(".highLight");
 let fontName = document.getElementById("fontName");
 let fontSizeRef = document.getElementById("fontSize");
 let optionsButtons = document.querySelectorAll(".option-button");
 let advancedOptionButton = document.querySelectorAll(".adv-option-button");
 let writingArea = document.getElementById("textArea");
+let titleArea = document.getElementById("Title");
 let removeButton = document.getElementById("clearAll");
 let saveButton = document.getElementById("saveNote");
 let backButton = document.getElementById("backButton");
+
+let meraArray = [];
+let id = createRandomId();
 
 // add default add
 let fontList = ["Arial", "Times New Roman", "Courier New", "cursive"];
@@ -53,7 +61,42 @@ advancedOptionButton.forEach((button) => {
 });
 
 removeButton.addEventListener("click", () => {
-  writingArea.innerHTML = "";
+  var msg = confirm("Do you really want to clear all?");
+  if (msg == true) {
+    writingArea.innerHTML = "";
+  }
+});
+
+var hook = true;
+window.onbeforeunload = function () {
+  if (hook) {
+    return "Did you save your stuff?";
+  }
+};
+function unhook() {
+  hook = false;
+}
+
+function createRandomId() {
+  return Math.random().toString(36).substr(2, 9);
+}
+
+saveButton.addEventListener("click", () => {
+  let content = writingArea.innerHTML;
+  let title = titleArea.innerText;
+
+  if (content !== "" && title !== "") {
+    let note = {
+      id: id,
+      title: title,
+      content: content,
+    };
+    allNotesAPI.saveNote(note);
+    alert("Note saved successfully");
+    unhook();
+  } else {
+    alert("Note can`t be empty");
+  }
 });
 
 window.onload = init();
