@@ -34,13 +34,13 @@ A Note taking app. It help to create and store notes of user
   <tr>
     <td>
       <a href="https://matrix-team.netlify.app/" target="_blank">
-        <img src="./src/img/editor.png" alt="Final Notes" />
+        <img src="./src/img/editor.png" alt="Editor" />
         <h4 align="center">Edit Page</h4>
       </a>
     </td>
     <td>
     <a href="https://matrix-team.netlify.app/" target="_blank">
-        <img src="" alt="GameOver Popup" />
+        <img src="./src/img/MainPage.png" alt="Final Notes" />
         <h4 align="center">Notes Added</h4>
       </a>
     </td>
