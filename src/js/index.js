@@ -14,22 +14,29 @@ function showNotes() {
   if (!notes) return;
   notes.forEach((note) => {
     console.log(note.content);
+
     let currentNote = `
-    
+
     <div class="note-div">
                 <h3 class="ti">${note.title}</h3>
                 ${note.content}
-                    
-                
-                
+
                 <button class="delete" onclick="deleteNote('${note.id}')">
                 <i class="fa fa-trash delete" ></i>
                 </button>
             </div>
-    
+
   `;
+
     allNotes.insertAdjacentHTML("afterend", currentNote);
   });
 }
 
 showNotes();
+(function () {
+  window.onpageshow = function (event) {
+    if (event.persisted) {
+      window.location.reload();
+    }
+  };
+})();

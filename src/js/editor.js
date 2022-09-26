@@ -13,6 +13,20 @@ let backButton = document.getElementById("backButton");
 let copyButton = document.getElementById("copyButton");
 
 let id = createRandomId();
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
 
 // add default add
 let fontList = ["Arial", "Times New Roman", "Courier New", "cursive"];
@@ -80,14 +94,18 @@ function createRandomId() {
 saveButton.addEventListener("click", () => {
   let title = titleArea.value;
   let content = writingArea.innerHTML;
-  console.log(content);
-  console.log(titleArea.value);
+
+  let currentDate = new Date(),
+    month = months[currentDate.getMonth()],
+    day = currentDate.getDate(),
+    year = currentDate.getFullYear();
 
   if (content !== "" && title !== "") {
     let note = {
       id: id,
       title: title,
       content: content,
+      date: `${month} ${day}, ${year}`,
     };
     allNotesAPI.saveNote(note);
     alert("Note saved successfully");
