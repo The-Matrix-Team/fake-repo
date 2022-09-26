@@ -12,7 +12,6 @@
   - [Contributing](#contributing)
     - [Special Thanks To](#special-thanks-to)
     - [How To](#how-to)
-  - [License](#license)
 
 <!-- ABOUT THE PROJECT -->
 
@@ -96,12 +95,6 @@ contributions you make are **greatly appreciated**.
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-<!-- LICENSE -->
-
-## License
-
-[![MIT License][license-shield]][https://matrix-team.netlify.app/]
 
 ## Acknowledgements
 
