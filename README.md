@@ -1,5 +1,7 @@
 # Notepad App
 
+![ Notepad App](https://socialify.git.ci/The-Matrix-Team/Team-A/image?description=1&descriptionEditable=Notepad%20App&language=1&name=1&owner=1&stargazers=1&theme=Dark)
+
 <!-- TABLE OF CONTENTS -->
 
 # Table of Contents
