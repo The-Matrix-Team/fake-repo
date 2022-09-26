@@ -34,7 +34,7 @@ A Note taking app. It help to create and store notes of user
   <tr>
     <td>
       <a href="https://matrix-team.netlify.app/" target="_blank">
-        <img src="./src/img/editor.png" alt="GameCompelete Popup" />
+        <img src="./src/img/editor.png" alt="Final Notes" />
         <h4 align="center">Edit Page</h4>
       </a>
     </td>
@@ -78,8 +78,6 @@ A Note taking app. It help to create and store notes of user
 <!-- CONTRIBUTING -->
 
 ## Contributing
-
-[![Contributors][contributors-shield]][contributors-url]
 
 ### Special Thanks To
 
